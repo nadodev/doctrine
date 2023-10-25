@@ -1,18 +1,18 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+   require __DIR__ . '/vendor/autoload.php';
 
-use Framework\Http\Request;
-use Framework\Http\Kernel;
+   use Framework\Http\Request;
+   use Framework\Http\Kernel;
 
-define('BASE_PATH', dirname(__DIR__.'/doctrine/'));
+   define('BASE_PATH', dirname(__DIR__.'/doctrine/'));
 
-    $request = Request::createFromGlobals();
+   $request = Request::createFromGlobals();
 
-    $kernel = new Kernel();
+   $kernel = new Kernel();
 
-    $response = $kernel->handle($request);
+   $response = $kernel->handle($request);
 
-    $response->send();
+   $response->send();
 
    
 
