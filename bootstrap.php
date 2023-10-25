@@ -1,7 +1,6 @@
 <?php
-// bootstrap.php
 
-require_once __DIR__ . '/vendor/autoload.php'; // Inclua o autoload do Composer
+require_once __DIR__ . '/vendor/autoload.php';
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
