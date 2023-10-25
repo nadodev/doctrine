@@ -1,0 +1,18 @@
+# Ativar o módulo mod_rewrite
+RewriteEngine On
+
+# Redirecionar todas as solicitações para um único arquivo (por exemplo, index.php)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+# Definir configurações de segurança
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Definir cabeçalhos HTTP de segurança
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"

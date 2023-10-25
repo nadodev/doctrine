@@ -1,0 +1,28 @@
+{
+    "name": "doctrine/projeto",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leonardo",
+            "email": "programacao@studiioalpha.com.br"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.11.0",
+        "doctrine/dbal": "^3.2",
+        "symfony/yaml": "^6.3",
+        "symfony/cache": "^5.4",
+        "doctrine/annotations": "^2.0",
+        "twig/twig": "^3.7",
+        "symfony/routing": "^6.3",
+        "symfony/config": "^6.3",
+        "symfony/http-foundation": "^6.1",
+        "symfony/framework-bundle": "^6.1",
+        "doctrine/cache": "^2.2",
+        "php-di/php-di": "^7.0"
+    }
+}
