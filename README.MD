@@ -1,4 +1,5 @@
 # Meu Projeto com Doctrine, Twig e FastRoute
+- Este projeto, faz parte de um estudo sobre as tecnologias acima, entao para por em praticas conhecimentos que obtive saiu esse projeto.
 
 ## Visão Geral
 
