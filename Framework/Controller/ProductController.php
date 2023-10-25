@@ -1,8 +1,12 @@
 <?php
 
-namespace Src\Controller;
-use Src\Core\Views;
-use Src\Models\ProdutoModel;
+namespace Framework\Controller;
+
+use Framework\Core\Views;
+use Framework\Models\ProdutoModel;
+
+use Framework\Http\Response;
+
 
 class ProductController extends Views
 {
@@ -11,7 +15,7 @@ class ProductController extends Views
 
     public function __construct()
     {
-        parent::__construct('/../views');
+        parent::__construct('/../../resources/views');
         $this->entityManager = require __DIR__ . '/../../bootstrap.php';
         $this->produtoModel = new ProdutoModel($this->entityManager);
     }
@@ -26,6 +30,8 @@ class ProductController extends Views
     {
          $product = $this->produtoModel->find($id);
 
-        echo $this->twig->render('show.twig', ['product' => $product]);
+      $view =  $this->twig->render('show.twig', ['product' => $product]);
+
+        return new Response($view);
     }
 }

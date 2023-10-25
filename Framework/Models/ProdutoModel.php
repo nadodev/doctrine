@@ -1,9 +1,9 @@
 <?php
 
-namespace Src\Models;
+namespace Framework\Models;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Src\Entity\Produto;
+use Framework\Entity\Produto;
 
 class ProdutoModel
 {
