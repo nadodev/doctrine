@@ -5,6 +5,8 @@ require_once __DIR__ . '/vendor/autoload.php'; // Inclua o autoload do Composer
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
+use Dotenv\Dotenv;
+
 
 $paths = [__DIR__ . '/Framework/Entity'];
 
@@ -14,12 +16,14 @@ $useSimpleAnnotationReader = false;
 
 $cache = null;
 
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 $dbParams = [
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'doctrine',
+    'driver'   => $_ENV['DB_DRIVER'],
+    'user'     => $_ENV['DB_USER'],
+    'password' => $_ENV['DB_PASSWORD'],
+    'dbname'   => $_ENV['DB_NAME'],
 ];
 
 $config = Setup::createAnnotationMetadataConfiguration(
